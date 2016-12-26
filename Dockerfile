@@ -2,7 +2,15 @@ FROM centos:latest
 
 RUN yum -y install epel-release
 RUN yum -y update
-RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs supervisor unzip
+RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs supervisor unzip autoconf
+RUN yum -y install bison
+RUN yum -y install libxml2 libxml2-devel
+RUN yum -y install libcurl libcurl-devel
+RUN yum -y install openjpeg openjpeg-devel
+RUN yum -y install libjpeg-devel
+RUN yum -y install libpng-devel
+RUN yum -y install freetype-devel
+RUN yum -y install libicu-devel
 
 #RUN wget https://github.com/php/php-src/archive/PHP-7.0.zip
 #RUN unzip ./PHP-7.0.zip
@@ -18,16 +26,7 @@ RUN tar xf php7.tar.gz
 RUN mv php7.tar.gz php7
 
 WORKDIR php7
-RUN yum -y install autoconf
 RUN ./buildconf
-RUN yum -y install bison
-RUN yum -y install libxml2 libxml2-devel
-RUN yum -y install libcurl libcurl-devel
-RUN yum -y install openjpeg openjpeg-devel
-RUN yum -y install libjpeg-devel
-RUN yum -y install libpng-devel
-RUN yum -y install freetype-devel
-RUN yum -y install libicu-devel
 
 
 RUN yum -y install libmcrypt libmcrypt-devel mcrypt mhash
