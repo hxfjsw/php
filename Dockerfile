@@ -2,11 +2,10 @@ FROM centos:latest
 
 RUN yum -y install epel-release
 RUN yum -y update
-RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs supervisor
+RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs supervisor unzip
 
 RUN wget https://github.com/php/php-src/archive/PHP-7.0.zip
-RUN yum -y install unzip
-RUN unzip PHP-7.0.zip
+RUN unzip ./PHP-7.0.zip
 
 WORKDIR /php-src-PHP-7.0
 RUN yum -y install autoconf
