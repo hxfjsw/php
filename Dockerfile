@@ -6,7 +6,6 @@ RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gd
 RUN yum -y install bison l libxml2 libxml2-devel libcurl libcurl-devel openjpeg openjpeg-devel libjpeg-devel libpng-devel freetype-devel libicu-devel l libmcrypt libmcrypt-devel mcrypt mhash
 
 
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 RUN yum -y install php70w php70w-cli php70w-common php70w-mysql php70w-pdo php70w-xml php70w-pecl php70w-mbstring php70w-gd php70w-pecl-mongodb php70w-pecl-redis
