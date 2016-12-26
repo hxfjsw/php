@@ -37,6 +37,6 @@ COPY ./php-fpm.conf /usr/local/php/etc/php-fpm.conf
 
 WORKDIR /work
 
-CMD "/usr/local/php/sbin/php-fpm -RF"
+#CMD "/usr/local/php/sbin/php-fpm -RF"
 
 EXPOSE 9000
