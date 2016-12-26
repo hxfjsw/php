@@ -65,7 +65,7 @@ RUN \
 		php-mcrypt \
 		php-devel \
 		php-xml \
-		php-mysqlnd \
+		php-mysql php-mysqlnd \
 		php-pdo \
 		php-opcache --nogpgcheck \
 		php-bcmath \
@@ -73,6 +73,7 @@ RUN \
 		php-pecl-mysql \
 		php-pecl-xdebug \
 		php-pecl-zip \
-		php-pecl-amqp --nogpgcheck \
-
+		php-pecl-amqp --nogpgcheck
+		php-pecl-swoole \
+        php-pecl-redis
 
