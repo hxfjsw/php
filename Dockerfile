@@ -4,10 +4,13 @@ RUN yum -y install epel-release
 RUN yum -y update
 RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs supervisor unzip
 
-RUN wget https://github.com/php/php-src/archive/PHP-7.0.zip
-RUN unzip ./PHP-7.0.zip
+#RUN wget https://github.com/php/php-src/archive/PHP-7.0.zip
+#RUN unzip ./PHP-7.0.zip
 
-WORKDIR /php-src-PHP-7.0
+RUN wget -o php-7.0.14.tar.gz http://cn2.php.net/get/php-7.0.14.tar.gz/from/this/mirror
+RUN tar -vxzf php-7.0.14.tar.gz
+RUN ls -l
+WORKDIR /php-src-PHP-7.0.14
 RUN yum -y install autoconf
 RUN ./buildconf
 RUN yum -y install bison
