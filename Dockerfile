@@ -8,7 +8,7 @@ RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gd
 #RUN unzip ./PHP-7.0.zip
 
 RUN wget -o php-7.0.14.tar.gz http://cn2.php.net/get/php-7.0.14.tar.gz/from/this/mirror
-RUN tar -vxzf php-7.0.14.tar.gz
+RUN tar xf php-7.0.14.tar.gz
 RUN ls -l
 WORKDIR /php-src-PHP-7.0.14
 RUN yum -y install autoconf
