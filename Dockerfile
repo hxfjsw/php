@@ -1,8 +1,8 @@
 FROM centos:latest
 
-
-RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs
-RUN easy_install supervisor
+RUN yum -y install epel-release
+RUN yum -y update
+RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gdb python-setuptools crontabs supervisor
 
 RUN wget https://github.com/php/php-src/archive/PHP-7.0.zip
 RUN yum -y install unzip
@@ -20,8 +20,7 @@ RUN yum -y install libpng-devel
 RUN yum -y install freetype-devel
 RUN yum -y install libicu-devel
 
-RUN yum -y install epel-release
-RUN yum -y update
+
 RUN yum -y install libmcrypt libmcrypt-devel mcrypt mhash
 
 RUN yum -y install libxslt-devel
