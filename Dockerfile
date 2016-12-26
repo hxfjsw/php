@@ -7,10 +7,17 @@ RUN yum -y install wget gcc-c++ pcre-devel openssl openssl-devel python cmake gd
 #RUN wget https://github.com/php/php-src/archive/PHP-7.0.zip
 #RUN unzip ./PHP-7.0.zip
 
-RUN wget -o php-7.0.14.tar.gz http://cn2.php.net/get/php-7.0.14.tar.gz/from/this/mirror
-RUN tar xf php-7.0.14.tar.gz
-RUN ls -l
-WORKDIR /php-src-PHP-7.0.14
+#RUN wget -o php-7.0.14.tar.gz http://cn2.php.net/get/php-7.0.14.tar.gz/from/this/mirror
+#RUN tar xf php-7.0.14.tar.gz
+#RUN ls -l
+#WORKDIR /php-src-PHP-7.0.14
+
+RUN wget http://cn2.php.net/get/php-7.0.0.tar.gz/from/this/mirror
+RUN mv mirror php7.tar.gz
+RUN tar xf php7.tar.gz
+RUN mv php7.tar.gz php7
+
+WORKDIR php7
 RUN yum -y install autoconf
 RUN ./buildconf
 RUN yum -y install bison
